@@ -1,68 +1,108 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Light grey background */
     margin: 0;
     padding: 20px;
+    color: #333; /* Dark text color */
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-}
-
+/* User Info Container */
 #user-info {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin: 10px 0 5px;
-}
-
-input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 20px;
-}
-
-#question-container {
-    margin-bottom: 20px;
-}
-
-.options button {
-    margin: 5px;
-    padding: 10px 15px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-#timer {
-    font-size: 20px;
-    text-align: center;
-    margin: 20px 0;
-    color: red;
-}
-
-#download-btn {
-    display: block;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 400px;
     margin: 0 auto;
-    padding: 10px 20px;
-    background-color: #28a745;
+    text-align: center;
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #007bff; /* Blue border on focus */
+}
+
+/* Button Styles */
+button {
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Question Container */
+#question-container {
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer Styles */
+#timer {
+    font-size: 24px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Options Button Styles */
+.options {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    margin-top: 10px;
+}
+
+.options button {
+    width: 100%; /* Full width for options */
+    margin-bottom: 10px; /* Space between options */
+}
+
+/* Download Button Styles */
+#download-btn {
+    margin-top: 20px;
+    background-color: #28a745; /* Green color */
 }
 
 #download-btn:hover {
-    background-color: #218838;
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    #user-info, #question-container {
+        padding: 15px;
+        max-width: 95%; /* Allow more width on small screens */
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px; /* Smaller buttons on mobile */
+    }
+
+    input[type="text"], input[type="number"] {
+        font-size: 14px; /* Smaller inputs on mobile */
+    }
 }
