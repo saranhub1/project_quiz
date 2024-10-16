@@ -1,119 +1,153 @@
 const questions = [
-    { question: "Listen to the sounds: /p/ and /b/. Select the one that starts the word 'pat.'", audio: "p_sound.mp3", options: ['p', 'b'], correct: 'p' },
-    { question: "Which word starts with the /k/ sound?", audio: "k_sound.mp3", options: ['cat', 'bat'], correct: 'cat' },
-    { question: "Select the sound that starts with /t/: tap or bat?", audio: "t_sound.mp3", options: ['tap', 'bat'], correct: 'tap' },
-    { question: "Listen: /s/ and /z/. Which sound starts the word 'sit'?", audio: "s_sound.mp3", options: ['s', 'z'], correct: 's' },
-    { question: "Which word starts with the /d/ sound?", audio: "d_sound.mp3", options: ['dog', 'log'], correct: 'dog' },
-    { question: "Choose the correct beginning sound for the word 'box'", audio: "b_sound.mp3", options: ['b', 'p'], correct: 'b' },
-    { question: "Which sound begins the word 'frog'?", audio: "f_sound.mp3", options: ['f', 't'], correct: 'f' },
-    { question: "Select the correct sound to start the word 'hat.'", audio: "h_sound.mp3", options: ['h', 'm'], correct: 'h' },
-    { question: "Which word begins with the /v/ sound?", audio: "v_sound.mp3", options: ['van', 'man'], correct: 'van' },
-    { question: "Choose the correct sound for 'sun'", audio: "s_sound2.mp3", options: ['s', 'f'], correct: 's' },
-    { question: "Which word starts with the /ch/ sound?", audio: "ch_sound.mp3", options: ['chip', 'ship'], correct: 'chip' },
-    { question: "Select the beginning sound of the word 'jog'", audio: "j_sound.mp3", options: ['j', 'b'], correct: 'j' },
-    { question: "Listen: /l/ and /r/. Which starts 'run'?", audio: "r_sound.mp3", options: ['l', 'r'], correct: 'r' },
-    { question: "Which word starts with /m/?", audio: "m_sound.mp3", options: ['man', 'tan'], correct: 'man' },
-    { question: "Select the word that starts with /p/: 'pen' or 'ten'?", audio: "p_sound2.mp3", options: ['pen', 'ten'], correct: 'pen' },
-    { question: "Which begins with /th/: 'this' or 'fish'?", audio: "th_sound.mp3", options: ['this', 'fish'], correct: 'this' },
-    { question: "Select the correct sound to start 'zip.'", audio: "z_sound.mp3", options: ['z', 's'], correct: 'z' },
-    { question: "Listen: /g/ and /k/. Which sound starts 'go'?", audio: "g_sound.mp3", options: ['g', 'k'], correct: 'g' },
-    { question: "Choose the correct sound for 'kite.'", audio: "k_sound2.mp3", options: ['k', 'p'], correct: 'k' },
-    { question: "Which word begins with /n/?", audio: "n_sound.mp3", options: ['net', 'bet'], correct: 'net' },
-    { question: "Select the beginning sound for 'fox.'", audio: "f_sound2.mp3", options: ['f', 'b'], correct: 'f' },
-    { question: "Which word starts with the /sh/ sound?", audio: "sh_sound.mp3", options: ['ship', 'chip'], correct: 'ship' },
-    { question: "Listen: /b/ and /d/. Which sound starts 'dog'?", audio: "d_sound2.mp3", options: ['b', 'd'], correct: 'd' },
-    { question: "Which word begins with the /g/ sound?", audio: "g_sound2.mp3", options: ['goat', 'coat'], correct: 'goat' },
-    { question: "Select the correct sound for 'rat.'", audio: "r_sound2.mp3", options: ['r', 't'], correct: 'r' },
-    { question: "Which word starts with /j/: 'jump' or 'bump'?", audio: "j_sound2.mp3", options: ['jump', 'bump'], correct: 'jump' },
-    { question: "Choose the correct sound for 'mat.'", audio: "m_sound2.mp3", options: ['m', 't'], correct: 'm' },
-    { question: "Which sound begins 'sock'?", audio: "s_sound3.mp3", options: ['s', 'k'], correct: 's' },
-    { question: "Select the sound to start 'pig.'", audio: "p_sound3.mp3", options: ['p', 'b'], correct: 'p' },
-    { question: "Which begins with /l/: 'lap' or 'cap'?", audio: "l_sound.mp3", options: ['lap', 'cap'], correct: 'lap' },
-    { question: "Select the correct sound for 'mop.'", audio: "m_sound3.mp3", options: ['m', 'p'], correct: 'm' },
-    { question: "Which word starts with /ch/?", audio: "ch_sound2.mp3", options: ['chip', 'lip'], correct: 'chip' }
+    { question: "Listen to the sounds: /p/ and /b/. Select the one that starts the word 'pat.'", audio: "p_sound.mp3.mp3", options: ['p', 'b', 'd', 'g', 't'], correct: ['p'] },
+    { question: "Which word starts with the /k/ sound?", audio: "k_sound.mp3", options: ['cat', 'bat', 'hat', 'sat', 'mat'], correct: ['cat'] },
+    { question: "Select the sound that starts with /t/:", audio: "t_sound.mp3", options: ['tap', 'bat', 'hat', 'mat', 'sat'], correct: ['tap'] },
+    { question: "Listen: /s/ and /z/. Which sound starts the word 'sit'?", audio: "s_sound.mp3", options: ['s', 'z', 't', 'm', 'f'], correct: ['s'] },
+    { question: "Which word starts with the /d/ sound?", audio: "d_sound.mp3", options: ['dog', 'log', 'frog', 'cat', 'bat'], correct: ['dog'] },
+    { question: "Choose the correct beginning sound for the word 'box'", audio: "b_sound.mp3", options: ['b', 'p', 'd', 'g', 'm'], correct: ['b'] },
+    { question: "Which sound begins the word 'frog'?", audio: "f_sound.mp3", options: ['f', 't', 'p', 'd', 'g'], correct: ['f'] },
+    { question: "Select the correct sound to start the word 'hat.'", audio: "h_sound.mp3", options: ['h', 'm', 'b', 's', 'p'], correct: ['h'] },
+    { question: "Which word starts with the /l/ sound?", audio: "l_sound.mp3", options: ['lake', 'bake', 'cake', 'take', 'fake'], correct: ['lake'] },
+    { question: "Listen: /t/ and /d/. Which sound starts the word 'dog'?", audio: "d_sound_2.mp3", options: ['t', 'd', 'g', 's', 'p'], correct: ['d'] },
+    { question: "Which sound begins the word 'zebra'?", audio: "z_sound.mp3", options: ['z', 'j', 's', 'g', 'b'], correct: ['z'] },
+    { question: "Select the correct sound to start the word 'chair.'", audio: "ch_sound.mp3", options: ['ch', 'sh', 'th', 'k', 'p'], correct: ['ch'] },
+    { question: "Which word starts with the /n/ sound?", audio: "n_sound.mp3", options: ['nut', 'cut', 'but', 'put', 'hut'], correct: ['nut'] },
+    { question: "Listen: /m/ and /n/. Which sound starts the word 'mat'?", audio: "m_sound.mp3", options: ['m', 'n', 't', 'b', 'c'], correct: ['m'] },
+    { question: "Which word starts with the /f/ sound?", audio: "fa_sound_2.mp3", options: ['fan', 'pan', 'can', 'man', 'ran'], correct: ['fan'] },
+    { question: "Select the correct sound to start the word 'yarn.'", audio: "y_sound.mp3", options: ['y', 'a', 'e', 'i', 'o'], correct: ['y'] },
+    { question: "Which sound begins the word 'elephant'?", audio: "e_sound.mp3", options: ['e', 'i', 'u', 'a', 'o'], correct: ['e'] },
+    { question: "Choose the correct sound for the word 'train.'", audio: "tr_sound_2.mp3", options: ['t', 'd', 'k', 'b', 's'], correct: ['t'] },
+    { question: "Listen: /h/ and /k/. Which sound starts the word 'hat'?", audio: "h_sound_2.mp3", options: ['h', 'k', 'g', 'd', 's'], correct: ['h'] },
+    { question: "Which word starts with the /v/ sound?", audio: "v_sound.mp3", options: ['van', 'ban', 'can', 'man', 'ran'], correct: ['van'] },
+    { question: "Select the correct beginning sound for the word 'x-ray.'", audio: "x_sound.mp3", options: ['x', 'z', 'k', 's', 't'], correct: ['x'] },
+    { question: "Which word starts with the /q/ sound?", audio: "q_sound.mp3", options: ['quack', 'black', 'snack', 'track', 'stack'], correct: ['quack'] },
+    { question: "Choose the sound that starts with /j/: jam or dam?", audio: "j_sound.mp3", options: ['jam', 'dam', 'ham', 'ram', 'clam'], correct: ['jam'] },
+    { question: "Which word starts with the /w/ sound?", audio: "w_sound.mp3", options: ['was', 'has', 'this', 'that', 'his'], correct: ['was'] },
+    { question: "Listen: /r/ and /l/. Which sound starts the word 'red'?", audio: "r_sound.mp3", options: ['r', 'l', 't', 'm', 'n'], correct: ['r'] },
+    { question: "Select the correct sound that starts the word 'whale.'", audio: "wh_sound.mp3", options: ['wh', 'h', 'w', 'r', 's'], correct: ['wh'] },
+    { question: "Which word starts with the /y/ sound?", audio: "ye_sound_2.mp3", options: ['yellow', 'hello', 'fellow', 'mellow', 'bellow'], correct: ['yellow'] },
+    { question: "Choose the sound that starts with /th/: this or his?", audio: "th_sound.mp3", options: ['this', 'his', 'was', 'has', 'fizz'], correct: ['this', 'his'] },
+    { question: "Listen: /ch/ and /sh/. Which sound starts the word 'ship'?", audio: "sh_sound.mp3", options: ['sh', 'ch', 'th', 'f', 'g'], correct: ['sh'] },
+    { question: "Which word starts with the /g/ sound?", audio: "g_sound.mp3", options: ['goat', 'boat', 'coat', 'mote', 'vote'], correct: ['goat'] },
+    { question: "Select the sound that starts with /z/: zebra or lebra?", audio: "z_sound.mp3", options: ['zebra', 'lebra', 'deb', 'fab', 'rab'], correct: ['zebra'] }
 ];
 
-
-let score = 0;
+let currentQuestionIndex = 0;
 let hits = 0;
 let misses = 0;
-let results = [];
 let clicks = 0;
+let totalTime = 40;
+let timer;
+let results = [];
+let userName, userAge;
 
 const questionContainer = document.getElementById('question-container');
+const timerDisplay = document.getElementById('timer');
 
-function loadQuestion(index) {
-    const questionData = questions[index];
-    clicks = 0;  // Reset clicks for each question
+document.getElementById('start-btn').addEventListener('click', startQuiz);
 
-    // Remove any existing click event listeners to avoid duplication
-    window.removeEventListener('click', countClicks);
+function startQuiz() {
+    userName = document.getElementById('name').value;
+    userAge = document.getElementById('age').value;
 
-    // Add click event listener to count clicks
-    window.addEventListener('click', countClicks);
+    if (!userName || !userAge) {
+        alert("Please enter your name and age.");
+        return;
+    }
 
-    const questionElement = document.createElement('div');
-    questionElement.innerHTML = `
-        <p>${questionData.question}</p>
-        <audio controls>
-            <source src="${questionData.audio}" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <div class="options">
-            ${questionData.options.map(option => `<button onclick="submitAnswer('${option}', '${questionData.correct}', ${index})">${option}</button>`).join('')}
-        </div>
-    `;
-
-    questionContainer.innerHTML = '';
-    questionContainer.appendChild(questionElement);
+    document.getElementById('user-info').style.display = 'none';
+    document.getElementById('start-btn').style.display = 'none';
+    questionContainer.style.display = 'block';
+    timerDisplay.style.display = 'block';
+    
+    displayQuestion();
 }
 
-function countClicks() {
-    clicks++;  // Increment click count on any click during question display
+function displayQuestion() {
+    if (currentQuestionIndex >= questions.length) {
+        finishQuiz();
+        return;
+    }
+
+    const question = questions[currentQuestionIndex];
+    questionContainer.innerHTML = `<h2>Q${currentQuestionIndex + 1}: ${question.question}</h2>`;
+    questionContainer.innerHTML += `<button onclick="playSound('${question.audio}')">Play Sound</button>`;
+    questionContainer.innerHTML += '<div class="options">' + 
+        question.options.map(option => 
+            `<button onclick="selectOption('${option}')">${option}</button>`).join('') +
+        '</div>';
+    
+    hits = 0;
+    misses = 0;
+    clicks = 0;
+    totalTime = 40;
+
+    timerDisplay.innerText = `Time left: ${totalTime}s`;
+    timer = setInterval(updateTimer, 1000);
 }
 
-function submitAnswer(selected, correct, index) {
-    // Remove the click counter listener when the answer is submitted
-    window.removeEventListener('click', countClicks);
+function playSound(audioFile) {
+    const audio = new Audio(audioFile);
+    audio.play();
+}
 
-    if (selected === correct) {
-        score++;
+function updateTimer() {
+    totalTime--;
+    timerDisplay.innerText = `Time left: ${totalTime}s`;
+    if (totalTime <= 0) {
+        clearInterval(timer);
+        alert("Time's up!");
+        nextQuestion();
+    }
+}
+
+function selectOption(selectedOption) {
+    const question = questions[currentQuestionIndex];
+
+    if (question.correct.includes(selectedOption)) {
         hits++;
     } else {
         misses++;
     }
-
-    results.push({
-        question: questions[index].question,
-        selectedAnswer: selected,
-        correctAnswer: correct,
-        result: selected === correct ? 'Hit' : 'Miss',
-        clicks: clicks  // Track the number of clicks for the current question
-    });
-
-    if (index < questions.length - 1) {
-        loadQuestion(index + 1);
-    } else {
-        alert("Quiz completed!");
+    clicks++;
+    
+    if (hits > 2 || totalTime <= 0) {
+        clearInterval(timer);
+        nextQuestion();
     }
 }
 
-function downloadCSV() {
-    const csvContent = [
-        ["Question", "Selected Answer", "Correct Answer", "Result", "Clicks"],
-        ...results.map(row => [row.question, row.selectedAnswer, row.correctAnswer, row.result, row.clicks])
-    ]
-        .map(e => e.join(","))
-        .join("\n");
-
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.setAttribute('href', url);
-    a.setAttribute('download', 'quiz_results.csv');
-    a.click();
+function nextQuestion() {
+    results[currentQuestionIndex] = {
+        q: `q${currentQuestionIndex + 1}`,
+        clicks: clicks,
+        hits: hits,
+        misses: misses,
+        time: totalTime
+    };
+    
+    currentQuestionIndex++;
+    displayQuestion();
 }
 
-window.onload = () => {
-    loadQuestion(0);
-};
+function finishQuiz() {
+    clearInterval(timer);
+    alert("Quiz completed!");
+    document.getElementById('question-container').style.display = 'none';
+    document.getElementById('timer').style.display = 'none';
+    document.getElementById('download-btn').style.display = 'block';
+}
+
+document.getElementById('download-btn').addEventListener('click', () => {
+    const csvContent = "data:text/csv;charset=utf-8,"
+        + `${userName},${userAge},` 
+        + results.map(e => `${e.q},${e.clicks},${e.hits},${e.misses},${e.time}`).join(",") + "\n";
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement('a');
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "quiz_results.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});

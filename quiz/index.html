@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auditory & Visual Quiz</title>
     <link rel="stylesheet" href="styles.css">
+    <title>Quiz App</title>
 </head>
 <body>
+    <div id="user-info">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <input type="number" id="age" placeholder="Enter your age" required>
+        <button id="start-btn">Start Quiz</button>
+    </div>
+    <div id="question-container" style="display: none;"></div>
+    <div id="timer" style="display: none;"></div>
+    <button id="download-btn" style="display: none;">Download Results</button>
 
-<div class="container">
-    <h1>Auditory & Visual Quiz</h1>
-
-    <div id="question-container"></div>
-
-    <!-- Download Button -->
-    <button class="download-btn" onclick="downloadCSV()">Download Results as CSV</button>
-</div>
-
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
